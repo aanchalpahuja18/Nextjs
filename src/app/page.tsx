@@ -25,7 +25,10 @@ import Navbar from '@/components/Navbar'
 const Home = () => {
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/> */}
+      <h1>Welcome to my app</h1>
+      <h2>This is the landing page of the webapp</h2>
+      <Link href="/newdashboard" className='bg-blue-400 p-2 text-white rounded-full'>Go to the Dashboard</Link>
     </div>
   )
 }
