@@ -18,17 +18,29 @@
 
 // export default Home
 
+"use client"
+
 import React from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import { useRouter } from 'next/navigation'
 
 const Home = () => {
+  const router = useRouter();
+
+  function navigate(page:string) {
+    router.push(`/${page}`)
+  }
   return (
+    // <div>
+    //   {/* <Navbar/> */}
+    //   <h1>Welcome to my app</h1>
+    //   <h2>This is the landing page of the webapp</h2>
+    //   <Link href="/newdashboard" className='bg-blue-400 p-2 text-white rounded-full'>Go to the Dashboard</Link>
+    // </div>
     <div>
-      {/* <Navbar/> */}
-      <h1>Welcome to my app</h1>
-      <h2>This is the landing page of the webapp</h2>
-      <Link href="/newdashboard" className='bg-blue-400 p-2 text-white rounded-full'>Go to the Dashboard</Link>
+      <button onClick={() => navigate("login")} className='bg-blue-300 p-2 rounded-md text-white m-2 cursor-pointer'>Go to Login page</button> <br />
+      <Link href="/colors" className='bg-blue-300 p-2 rounded-md text-white m-2 mt-4 cursor-pointer'>Go to Colors page</Link>
     </div>
   )
 }
